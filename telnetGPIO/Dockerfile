@@ -1,14 +1,16 @@
 #ARG BUILD_FROM
 #FROM $BUILD_FROM
 #FROM hassioaddons/base-amd64
-FROM hassioaddons/base-armhf
+#FROM hassioaddons/base-armhf
+FROM elmex/armhf-telnetgpio
+
 
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN apk add --no-cache python3 alpine-sdk python3-dev jq &&\
-	python3 -m ensurepip && \
-	pip3 install paho-mqtt bitarray
+#RUN apk add --no-cache python3 alpine-sdk python3-dev jq &&\
+#	python3 -m ensurepip && \
+#	pip3 install paho-mqtt bitarray
 	
 # Copy data for add-on
 COPY run.sh /
